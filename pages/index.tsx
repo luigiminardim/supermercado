@@ -1,3 +1,5 @@
+import { Box } from "@chakra-ui/layout";
+
 export default function Home() {
-  return <h1>Hello World</h1>;
+  return <Box w="full" h="16" background="primary"/>;
 }
