@@ -24,7 +24,6 @@ export const getStaticProps: GetStaticProps<HomeScreenProps> = async (
     "https://api.instabuy.com.br/apiv3/layout?subdomain=supermercado"
   );
   const data = (await response.json()).data as HomeScreenProps;
-  console.log("data: ", data);
   return {
     props: data,
   };
