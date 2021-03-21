@@ -17,7 +17,6 @@ import { MdHome } from "react-icons/md";
 import { IoMdGrid, IoMdPricetag, IoIosGrid } from "react-icons/io";
 import { BsCardChecklist } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
-import { useRef } from "react";
 
 export type MobileMenuProps = Omit<DrawerProps, "children">;
 
@@ -50,6 +49,21 @@ export function MobileMenu(props: MobileMenuProps): JSX.Element {
           </DrawerHeader>
           <DrawerBody>
             <Menu>
+              <MenuGroup title="Usuário">
+                <NextLink href="/">
+                  <a>
+                    <MenuItem icon={<BsCardChecklist size={20} />}>
+                      Minhas Listas
+                    </MenuItem>
+                  </a>
+                </NextLink>
+                <NextLink href="/">
+                  <a>
+                    <MenuItem icon={<FiLogIn size={20} />}>Login</MenuItem>
+                  </a>
+                </NextLink>
+              </MenuGroup>
+              <Divider />
               <MenuGroup title="Menu">
                 <NextLink href="/">
                   <a>
@@ -68,21 +82,6 @@ export function MobileMenu(props: MobileMenuProps): JSX.Element {
                     <MenuItem icon={<IoMdGrid size={20} />}>
                       Departametos
                     </MenuItem>
-                  </a>
-                </NextLink>
-              </MenuGroup>
-              <Divider />
-              <MenuGroup title="Usuário">
-                <NextLink href="/">
-                  <a>
-                    <MenuItem icon={<BsCardChecklist size={20} />}>
-                      Minhas Listas
-                    </MenuItem>
-                  </a>
-                </NextLink>
-                <NextLink href="/">
-                  <a>
-                    <MenuItem icon={<FiLogIn size={20} />}>Login</MenuItem>
                   </a>
                 </NextLink>
               </MenuGroup>
