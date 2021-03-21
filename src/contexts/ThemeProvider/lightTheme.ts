@@ -13,7 +13,7 @@ export const lightTheme = extendTheme({
     background: "#d5d5d5",
     onBackgorund: "#e1e1e1",
     surface: "#f5f5f5",
-    onSurface: "#eeeeee"
+    onSurface: "#2e2e2e"
   },
 });
 
