@@ -135,29 +135,48 @@ export function DesktopHeader({
           px="5"
           py="1"
           spacing="10"
-          bg="primaryLight"
+          bg="primary"
         >
-          <Link
-            to="/"
-            fontSize="lg"
-            _hover={{ fontStyle: "none", color: "onSecondary" }}
-          >
-            Início
-          </Link>
-          <Link
-            to="/"
-            fontSize="lg"
-            _hover={{ fontStyle: "none", color: "onSecondary" }}
-          >
-            Ofertas
-          </Link>
-          <Link
-            to="/"
-            fontSize="lg"
-            _hover={{ fontStyle: "none", color: "onSecondary" }}
-          >
-            Departamentos
-          </Link>
+          <Menu>
+            <HStack spacing="10">
+              <NextLink
+                href="/"
+                passHref
+                children={
+                  <Link
+                    fontSize="lg"
+                    _hover={{ fontStyle: "none", color: "onSecondary" }}
+                  >
+                    Início
+                  </Link>
+                }
+              />
+              <NextLink
+                href="/"
+                passHref
+                children={
+                  <Link
+                    fontSize="lg"
+                    _hover={{ fontStyle: "none", color: "onSecondary" }}
+                  >
+                    Ofertas
+                  </Link>
+                }
+              />
+              <NextLink
+                href="#"
+                passHref
+                children={
+                  <Link
+                    fontSize="lg"
+                    _hover={{ fontStyle: "none", color: "onSecondary" }}
+                  >
+                    Departamentos
+                  </Link>
+                }
+              />
+            </HStack>
+          </Menu>
         </HStack>
       </Flex>
     </>
