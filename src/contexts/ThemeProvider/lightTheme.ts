@@ -10,7 +10,10 @@ export const lightTheme = extendTheme({
     secondaryLight: "#439636",
     secondaryDark: "#003b00",
     onSecondary: "#fff",
-    background: "#666666"
+    background: "#d5d5d5",
+    onBackgorund: "#e1e1e1",
+    surface: "#ffffff",
+    onSurface: "#2e2e2e"
   },
 });
 
