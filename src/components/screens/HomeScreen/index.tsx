@@ -3,6 +3,7 @@ import { Item } from "../../../models/Item";
 import { Footer } from "../../shared/Footer";
 import { Header } from "../../shared/Header";
 import { TopMainScreenLayout } from "../../shared/TopMainScreenLayout";
+import { BannersCarousel } from "./components/BannersCarousel";
 import { Banner } from "./models/Banner";
 import { ColletionItems } from "./models/ColletionItems";
 
@@ -23,6 +24,7 @@ export default function HomeScreen({
       topComponent={<Header />}
       mainComponent={
         <Flex direction="column" grow={1}>
+          <BannersCarousel banners={banners} mt="2" />
           <Spacer />
           <Footer />
         </Flex>

@@ -12,11 +12,12 @@ import {
   Menu,
   MenuButton,
   MenuDivider,
+  MenuGroup,
   MenuIcon,
   MenuItem,
   MenuList,
 } from "@chakra-ui/menu";
-import { HTMLChakraProps, Link, useDisclosure } from "@chakra-ui/react";
+import { HTMLChakraProps, Link, Portal, useDisclosure } from "@chakra-ui/react";
 import { MobileMenuDrawer } from "./components/MobileMenuDrawer";
 import { CartDrawer } from "../../CartDrawer";
 
@@ -94,17 +95,22 @@ export function DesktopHeader({
               >
                 <MdPerson size={24} />
               </MenuButton>
-              <MenuList bg="surface" color="onBackground">
-                <MenuButton as={MenuIcon} />
-                <MenuItem>
-                  <Icon as={BsCardChecklist} color="onBackground" mr="2" />
-                  Minha Lista
-                </MenuItem>
-                <MenuDivider />
-                <MenuItem>
-                  <Icon as={FiLogIn} color="onBackground" mr="2" /> Fazer login
-                </MenuItem>
-              </MenuList>
+              <Portal>
+                <MenuList bg="surface" color="onBackground" zIndex={10}>
+                  <MenuGroup title="Usuário">
+                    <MenuButton as={MenuIcon} />
+                    <MenuItem>
+                      <Icon as={BsCardChecklist} color="onBackground" mr="2" />
+                      Minhas Listas
+                    </MenuItem>
+                    <MenuDivider />
+                    <MenuItem>
+                      <Icon as={FiLogIn} color="onBackground" mr="2" /> Fazer
+                      Login
+                    </MenuItem>
+                  </MenuGroup>
+                </MenuList>
+              </Portal>
             </Menu>
             <Button
               d={{ base: "block", md: "none" }}

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 export enum ImageType {
   ITEM = "item",
   STORE = "store",
+  BANNER = "banner",
   GENERAL = "general",
   STATIC = "/",
 }
@@ -23,6 +24,9 @@ export function Image({ src: srcProp, type, ...props }: ImageProps) {
     case ImageType.ITEM:
     case ImageType.STORE:
       src += `${instabuyAssets}.${type}.image.large/l-${srcProp}`;
+      break;
+    case ImageType.BANNER:
+      src += `${instabuyAssets}.store.${type}/bnr-${srcProp}`;
       break;
     case ImageType.GENERAL:
       src += `${instabuyAssets}.image.${type}/${srcProp}`;

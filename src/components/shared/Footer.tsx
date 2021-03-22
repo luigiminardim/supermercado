@@ -171,12 +171,14 @@ export function Footer({}: FooterProps): JSX.Element {
           <Text fontSize="sm" color="onPrimary">
             Supermercado Modelo - Todos os direitos reservados.{" "}
           </Text>
-          <Image
-            type={ImageType.STATIC}
-            src="instabuy.png"
-            width={115}
-            height={26}
-          />
+          <Box flexShrink={0}>
+            <Image
+              type={ImageType.STATIC}
+              src="instabuy.png"
+              width={115}
+              height={26}
+            />
+          </Box>
         </Flex>
       </Container>
     </Flex>
