@@ -17,7 +17,8 @@ import {
   MenuList,
 } from "@chakra-ui/menu";
 import { HTMLChakraProps, Link, useDisclosure } from "@chakra-ui/react";
-import { MobileMenu } from "./shared/MobileMenu";
+import { MobileMenuDrawer } from "./components/MobileMenuDrawer";
+import { CartDrawer } from "../../CartDrawer";
 
 export function DesktopHeader({
   ...props
@@ -27,10 +28,16 @@ export function DesktopHeader({
     onOpen: onOpenMobileMenu,
     onClose: onCloseMobileMenu,
   } = useDisclosure();
+  const {
+    isOpen: isOpenCart,
+    onOpen: onOpenCart,
+    onClose: onCloseCart,
+  } = useDisclosure();
 
   return (
     <>
-      <MobileMenu isOpen={isOpenMobileMenu} onClose={onCloseMobileMenu} />
+      <MobileMenuDrawer isOpen={isOpenMobileMenu} onClose={onCloseMobileMenu} />
+      <CartDrawer isOpen={isOpenCart} onClose={onCloseCart} />
       <Flex as="header" direction="column" shadow="lg" {...props}>
         <HStack px="5" py="2" bg="primary" spacing="10" shadow="lg">
           <NextLink href="/">
@@ -116,6 +123,7 @@ export function DesktopHeader({
               p="2"
               _focus={{ background: "primaryDark" }}
               _hover={{ background: "primaryDark" }}
+              onClick={onOpenCart}
             >
               <HiShoppingCart size={24} />
             </Button>

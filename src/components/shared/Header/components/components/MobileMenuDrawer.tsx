@@ -20,7 +20,7 @@ import { FiLogIn } from "react-icons/fi";
 
 export type MobileMenuProps = Omit<DrawerProps, "children">;
 
-export function MobileMenu(props: MobileMenuProps): JSX.Element {
+export function MobileMenuDrawer(props: MobileMenuProps): JSX.Element {
   return (
     <Drawer {...props} placement="left">
       <DrawerOverlay>
