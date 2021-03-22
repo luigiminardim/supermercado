@@ -1,5 +1,6 @@
-import { Flex } from "@chakra-ui/layout";
+import { Flex, Spacer } from "@chakra-ui/layout";
 import { Item } from "../../../models/Item";
+import { Footer } from "../../shared/Footer";
 import { Header } from "../../shared/Header";
 import { TopMainScreenLayout } from "../../shared/TopMainScreenLayout";
 import { Banner } from "./models/Banner";
@@ -20,7 +21,12 @@ export default function HomeScreen({
     <TopMainScreenLayout
       bg="background"
       topComponent={<Header />}
-      mainComponent={<Flex grow={1}></Flex>}
+      mainComponent={
+        <Flex direction="column" grow={1}>
+          <Spacer />
+          <Footer />
+        </Flex>
+      }
     ></TopMainScreenLayout>
   );
 }

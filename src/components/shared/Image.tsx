@@ -1,8 +1,11 @@
 import NextImage, { ImageProps as NextImageProps } from "next/image";
+import { useEffect } from "react";
 
 export enum ImageType {
-  ITEM = 'item',
-  STORE = 'store'
+  ITEM = "item",
+  STORE = "store",
+  GENERAL = "general",
+  STATIC = "/",
 }
 
 export type ImageProps = {
@@ -10,6 +13,24 @@ export type ImageProps = {
 } & NextImageProps;
 
 export function Image({ src: srcProp, type, ...props }: ImageProps) {
-  const src = `https://assets.instabuy.com.br/ib.${type}.image.large/l-${srcProp}`;
+  const instabuyAssets = `https://assets.instabuy.com.br/ib`;
+
+  let src = "";
+  switch (type) {
+    case ImageType.STATIC:
+      src += `/${srcProp}`;
+      break;
+    case ImageType.ITEM:
+    case ImageType.STORE:
+      src += `${instabuyAssets}.${type}.image.large/l-${srcProp}`;
+      break;
+    case ImageType.GENERAL:
+      src += `${instabuyAssets}.image.${type}/${srcProp}`;
+      break;
+  }
+
+  useEffect(() => {
+    console.log(src);
+  }, []);
   return <NextImage src={src} {...props} />;
 }
