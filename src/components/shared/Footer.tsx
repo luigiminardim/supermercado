@@ -21,7 +21,7 @@ type FooterProps = {};
 export function Footer({}: FooterProps): JSX.Element {
   return (
     <Flex direction="column" bg="primaryLight" color="onPrimary" p="10">
-      <Container maxW="8xl">
+      <Container p="0" maxW="8xl">
         <Wrap spacing="10" justify="space-between">
           <WrapItem flexDir="column">
             <Menu>

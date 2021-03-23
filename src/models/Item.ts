@@ -4,7 +4,7 @@ export class Item {
   unity_type: "UNI" | "KG" | "BOX" | "GR" | "M2" | "M" | "ML" | "L"
   prices: {
     price: number
-    promoPrice: number
+    promo_price?: number
   }[]
   shipping: {
     /** Kg */

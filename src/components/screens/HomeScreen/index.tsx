@@ -4,6 +4,7 @@ import { Footer } from "../../shared/Footer";
 import { Header } from "../../shared/Header";
 import { TopMainScreenLayout } from "../../shared/TopMainScreenLayout";
 import { BannersCarousel } from "./components/BannersCarousel";
+import { PromotionSection } from "./components/PromotionSection";
 import { Banner } from "./models/Banner";
 import { ColletionItems } from "./models/ColletionItems";
 
@@ -25,6 +26,7 @@ export default function HomeScreen({
       mainComponent={
         <Flex direction="column" grow={1}>
           <BannersCarousel banners={banners} mt="2" />
+          <PromotionSection promotions={promo} />
           <Spacer />
           <Footer />
         </Flex>
