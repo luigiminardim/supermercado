@@ -7,6 +7,8 @@ import {
   Circle,
   Flex,
   HStack,
+  LinkBox,
+  LinkOverlay,
   Spacer,
   Text,
   VStack,
@@ -22,6 +24,7 @@ import {
   Portal,
   useDisclosure,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { useState } from "react";
 import { Item } from "../../../../models/Item";
 import { Image, ImageType } from "../../../shared/Image";
@@ -135,12 +138,24 @@ export function ItemCard({ item, ...props }: ItemCardProps): JSX.Element {
           height={150}
         />
       </Center>
-      <Flex direction="column" align="start">
-        <Text as="h5" textAlign="left" fontSize="md" fontWeight="bold" noOfLines={2}>
-          {item.name}
+      <LinkBox d="flex" flexDirection="column" align="start">
+        <NextLink href={`/products/${item.slug}`} passHref>
+          <LinkOverlay>
+            <Text
+              as="h5"
+              textAlign="left"
+              fontSize="md"
+              fontWeight="bold"
+              noOfLines={2}
+            >
+              {item.name}
+            </Text>
+          </LinkOverlay>
+        </NextLink>
+        <Text as="span" noOfLines={1} textAlign="left">
+          {item.brand}
         </Text>
-        <Text noOfLines={1}>{item.brand}</Text>
-      </Flex>
+      </LinkBox>
     </Flex>
   );
 }

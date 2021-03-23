@@ -40,6 +40,7 @@ export function ItemsCarousel({
       showStatus={false}
       showIndicators={false}
       showThumbs={false}
+      stopOnHover={true}
       renderArrowPrev={(onClick, hasNext, label) => (
         <IconButton
           zIndex={1}
