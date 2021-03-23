@@ -28,8 +28,8 @@ export default function HomeScreen({
         <Flex direction="column" grow={1}>
           <BannersCarousel banners={banners} mt="2" />
           <PromotionSection mb="5" title="Ofertas" items={promo} />
-          {collection_items.map(({ title, items }) => (
-            <PromotionSection my="5" title={title} items={items} />
+          {collection_items.map(({ title, items, id }) => (
+            <PromotionSection key={id} my="5" title={title} items={items} />
           ))}
           <Spacer mb="5"/>
           <Footer />

@@ -158,7 +158,7 @@ export function DesktopHeader({
                 }
               />
               <NextLink
-                href="/"
+                href="/#"
                 passHref
                 children={
                   <Link
@@ -170,7 +170,7 @@ export function DesktopHeader({
                 }
               />
               <NextLink
-                href="#"
+                href="/#"
                 passHref
                 children={
                   <Link

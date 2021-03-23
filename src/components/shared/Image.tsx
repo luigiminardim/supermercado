@@ -33,8 +33,5 @@ export function Image({ src: srcProp, type, ...props }: ImageProps) {
       break;
   }
 
-  useEffect(() => {
-    console.log(src);
-  }, []);
   return <NextImage src={src} {...props} />;
 }

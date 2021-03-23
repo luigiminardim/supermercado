@@ -25,4 +25,9 @@ export class Item {
   description: string
   brand: string
   related_items: Item[]
+  main_subcategory: {
+    category_id: {
+      title: string
+    }
+  }
 }
