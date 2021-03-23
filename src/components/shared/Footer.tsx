@@ -167,7 +167,7 @@ export function Footer({}: FooterProps): JSX.Element {
           </WrapItem>
         </Wrap>
         <Divider my="5" borderColor="primaryDark" />
-        <Flex direction="row" justify="space-between">
+        <HStack as="footer" direction="row" justify="space-between">
           <Text fontSize="sm" color="onPrimary">
             Supermercado Modelo - Todos os direitos reservados.{" "}
           </Text>
@@ -179,7 +179,7 @@ export function Footer({}: FooterProps): JSX.Element {
               height={26}
             />
           </Box>
-        </Flex>
+        </HStack>
       </Container>
     </Flex>
   );
