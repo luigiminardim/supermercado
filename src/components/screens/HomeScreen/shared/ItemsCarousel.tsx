@@ -36,8 +36,10 @@ export function ItemsCarousel({
     <Carousel
       emulateTouch
       showArrows
+      autoPlay={false}
       showStatus={false}
       showIndicators={false}
+      showThumbs={false}
       renderArrowPrev={(onClick, hasNext, label) => (
         <IconButton
           zIndex={1}

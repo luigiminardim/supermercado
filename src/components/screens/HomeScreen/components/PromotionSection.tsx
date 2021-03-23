@@ -1,23 +1,32 @@
-import { BoxProps, Container, Text, Wrap, WrapItem } from "@chakra-ui/layout";
+import { Box, BoxProps, Container, Text, Wrap, WrapItem } from "@chakra-ui/layout";
 import { Item } from "../../../../models/Item";
 import { ItemCard } from "../shared/ItemCard";
 import { ItemsCarousel } from "../shared/ItemsCarousel";
 
-export type PromotionSectionProps = { promotions: Item[] } & Omit<
-  BoxProps,
-  "children"
->;
+export type PromotionSectionProps = {
+  title: string;
+  items: Item[];
+} & Omit<BoxProps, "children">;
 
 export function PromotionSection({
-  promotions,
+  title,
+  items,
   ...props
 }: PromotionSectionProps): JSX.Element {
   return (
-    <Container maxW="8xl" {...props} py="5">
+    <Container
+      as="section"
+      maxW="8xl"
+      borderRadius="md"
+      py="5"
+      bg="surface"
+      color="onSurface"
+      {...props}
+    >
       <Text mb="4" fontSize="4xl" color="onBackground">
-        Ofertas
+        {title}
       </Text>
-      <ItemsCarousel items={promotions} />
+      <ItemsCarousel items={items} />
     </Container>
   );
 }

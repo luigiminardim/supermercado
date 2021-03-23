@@ -1,4 +1,4 @@
-import { Container, Flex, Spacer, Text } from "@chakra-ui/layout";
+import { Container, Flex, Spacer, Text, VStack } from "@chakra-ui/layout";
 import { Item } from "../../../models/Item";
 import { Footer } from "../../shared/Footer";
 import { Header } from "../../shared/Header";
@@ -27,19 +27,14 @@ export default function HomeScreen({
       mainComponent={
         <Flex direction="column" grow={1}>
           <BannersCarousel banners={banners} mt="2" />
-          <PromotionSection promotions={promo} />
-          {collection_items.map((collection) => (
-            <Container maxW="8xl" py="5">
-              <Text mb="4" fontSize="4xl" color="onBackground">
-                {collection.title}
-              </Text>
-              <ItemsCarousel items={collection.items} />
-            </Container>
+          <PromotionSection mb="5" title="Ofertas" items={promo} />
+          {collection_items.map(({ title, items }) => (
+            <PromotionSection my="5" title={title} items={items} />
           ))}
-          <Spacer />
+          <Spacer mb="5"/>
           <Footer />
         </Flex>
       }
-    ></TopMainScreenLayout>
+    />
   );
 }

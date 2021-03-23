@@ -56,6 +56,7 @@ export type BannersCaouselProps = {
 import { Image, ImageType } from "../../../shared/Image";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import image from "next/image";
 
 export function BannersCarousel({
   banners,
@@ -83,6 +84,7 @@ export function BannersCarousel({
           .filter((banner) => banner.is_desktop == isDesktop)
           .map((banner) => (
             <Image
+              key={banner.id}
               type={ImageType.BANNER}
               src={banner.image}
               width={1440}

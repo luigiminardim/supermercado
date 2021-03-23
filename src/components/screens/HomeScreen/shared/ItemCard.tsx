@@ -135,45 +135,12 @@ export function ItemCard({ item, ...props }: ItemCardProps): JSX.Element {
           height={150}
         />
       </Center>
-      <VStack align="start">
-        <Text as="h5" fontSize="md" fontWeight="bold" noOfLines={2}>
+      <Flex direction="column" align="start">
+        <Text as="h5" textAlign="left" fontSize="md" fontWeight="bold" noOfLines={2}>
           {item.name}
         </Text>
         <Text noOfLines={1}>{item.brand}</Text>
-      </VStack>
-      <Spacer />
-
-      {/* <HStack as="footer" align="stretch" justify="end">
-        <IconButton
-          aria-label="minus"
-          bg="secondary"
-          color="onSecondary"
-          _hover={{ bg: "secondaryDark" }}
-          onClick={() => setQtd(qtd - 1)}
-          disabled={qtd <= 0}
-          icon={<MinusIcon />}
-        />
-        <Editable
-          flex={1}
-          textAlign="center"
-          fontSize="2xl"
-          color="secondaryDark"
-          value={`${qtd}`}
-          isPreviewFocusable
-          onChange={onChangeEditableQtd}
-        >
-          <EditablePreview />
-          <EditableInput />
-        </Editable>
-        <IconButton
-          aria-label="add"
-          bg="secondary"
-          color="onSecondary"
-          _hover={{ bg: "secondaryDark" }}
-          onClick={() => setQtd(qtd + 1)}
-          icon={<AddIcon />}
-        />
-      </HStack> */}
+      </Flex>
     </Flex>
   );
 }
