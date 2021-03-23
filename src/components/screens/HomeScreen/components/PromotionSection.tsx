@@ -13,19 +13,11 @@ export function PromotionSection({
   ...props
 }: PromotionSectionProps): JSX.Element {
   return (
-    <Container maxW="8xl" {...props} py="10">
+    <Container maxW="8xl" {...props} py="5">
       <Text mb="4" fontSize="4xl" color="onBackground">
         Ofertas
       </Text>
-      <Wrap align="stretch" justify="space-around" spacing="5">
-        {promotions.map((promotion) => (
-          <WrapItem key={promotion.id}>
-            <ItemCard item={promotion} h="full" />
-          </WrapItem>
-        ))}
-      </Wrap>
-      <Text>Categoria</Text>
-      <ItemsCarousel items={promotions}/>
+      <ItemsCarousel items={promotions} />
     </Container>
   );
 }
