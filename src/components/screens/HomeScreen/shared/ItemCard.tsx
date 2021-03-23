@@ -50,12 +50,11 @@ export function ItemCard({ item, ...props }: ItemCardProps): JSX.Element {
       direction="column"
       borderRadius="sm"
       w="270px"
-      h="300"
+      h="291px"
       bg="surface"
       color="onSurface"
       px="4"
-      pt="2"
-      pb="2"
+      py="2"
       {...props}
     >
       <HStack as="header">

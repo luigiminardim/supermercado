@@ -21,7 +21,7 @@ type FooterProps = {};
 export function Footer({}: FooterProps): JSX.Element {
   return (
     <Flex direction="column" bg="primaryLight" color="onPrimary" p="10">
-      <Container p="0" maxW="8xl">
+      <Container maxW="8xl">
         <Wrap spacing="10" justify="space-between">
           <WrapItem flexDir="column">
             <Menu>
@@ -167,7 +167,7 @@ export function Footer({}: FooterProps): JSX.Element {
           </WrapItem>
         </Wrap>
         <Divider my="5" borderColor="primaryDark" />
-        <Flex direction="row" justify="space-between">
+        <HStack as="footer" direction="row" justify="space-between">
           <Text fontSize="sm" color="onPrimary">
             Supermercado Modelo - Todos os direitos reservados.{" "}
           </Text>
@@ -179,7 +179,7 @@ export function Footer({}: FooterProps): JSX.Element {
               height={26}
             />
           </Box>
-        </Flex>
+        </HStack>
       </Container>
     </Flex>
   );
