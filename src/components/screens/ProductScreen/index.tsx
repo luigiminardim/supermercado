@@ -25,10 +25,6 @@ export type ProductScreenProps = {
 };
 
 export function ProductScreen({ item }: ProductScreenProps): JSX.Element {
-  useEffect(() => {
-    console.log("Na Screen", item);
-    return () => {};
-  }, []);
   const [selectedImage, setSelectedImage] = useState(0);
   const hasPromotion = !!item.prices[0].promo_price;
   const validPrice = item.prices[0].promo_price ?? item.prices[0].price;

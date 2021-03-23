@@ -10,6 +10,15 @@ export default function ProductPage({ item }: ProductScreenProps): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
+  if (slug === "") {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: true,
+      },
+    };
+  }
+
   const response = await fetch(
     `https://api.instabuy.com.br/apiv3/item/?subdomain=supermercado&slug=${slug}`
   );
