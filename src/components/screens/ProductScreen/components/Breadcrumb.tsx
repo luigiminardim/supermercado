@@ -34,7 +34,7 @@ export function Breadcrumb({ item, ...props }: BreadcrumbProps): JSX.Element {
         </BreadcrumbLink>
       </BreadcrumbItem>
       <BreadcrumbItem isCurrentPage>
-        <BreadcrumbLink>Breadcrumb</BreadcrumbLink>
+        <BreadcrumbLink>{item.name}</BreadcrumbLink>
       </BreadcrumbItem>
     </ChakraBreadcrumb>
   );
